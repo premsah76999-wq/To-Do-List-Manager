@@ -1,0 +1,238 @@
+/* --- HAND-DRAWN CSS STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kalam', cursive;
+}
+
+body {
+    background-color: #ffd269;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.paper-outer {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 520px; 
+    border-radius: 25px 35px 20px 40px / 40px 20px 35px 25px;
+    padding: 8px; 
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paper-inner {
+    background-color: #ffffff;
+    border: 2px solid #ffd269;
+    border-radius: 35px 20px 40px 25px / 25px 40px 20px 35px;
+    padding: 35px 25px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.title {
+    color: #558b88;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.heart {
+    color: #ffd269;
+    font-size: 20px;
+}
+
+.squiggle {
+    margin-top: -5px;
+    color: #558b88;
+}
+
+.squiggle svg {
+    width: 80px;
+    height: auto;
+    stroke: currentColor;
+}
+
+/* --- NEW: 2-COLUMN WRITE SECTION --- */
+.write-section {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Creates two columns */
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px dashed #558b88; /* Hand-drawn style box */
+    border-radius: 15px 25px 15px 20px;
+    background-color: rgba(255, 210, 105, 0.1); /* Very faint yellow background */
+}
+
+/* Column 1: Task Input */
+.write-col-1 {
+    display: flex;
+    align-items: center;
+}
+
+.write-col-1 input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    color: #333;
+    width: 100%;
+}
+
+.write-col-1 input::placeholder {
+    color: #aaa;
+}
+
+/* Column 2: Settings & Add Button */
+.write-col-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-left: 2px dashed #ffd269; /* Divider line between columns */
+    padding-left: 15px;
+}
+
+.section-select {
+    background: transparent;
+    border: 1px solid #558b88;
+    border-radius: 10px 15px 10px 15px;
+    color: #558b88;
+    font-size: 14px;
+    padding: 2px 8px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+    width: 100%;
+}
+
+.section-select:focus {
+    background: rgba(85, 139, 136, 0.1);
+}
+
+.add-btn {
+    background: #558b88;
+    color: white;
+    border: none;
+    border-radius: 10px 12px 10px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 4px 15px;
+    width: 100%;
+    transition: transform 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    background: #3d6664;
+}
+
+/* --- TASK LIST STYLING --- */
+ul {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.list-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffd269; 
+    gap: 12px;
+    transition: opacity 0.3s;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.checkbox-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #558b88;
+    border-radius: 45% 55% 50% 50% / 55% 45% 55% 45%; 
+    transition: all 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-badge {
+    font-size: 13px;
+    color: #ff9f43;
+    border: 1px solid #ffd269;
+    border-radius: 8px 12px 8px 12px;
+    padding: 1px 6px;
+    white-space: nowrap;
+}
+
+.task-text {
+    font-size: 20px;
+    color: #444;
+    word-break: break-word;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Completed State */
+.list-row.completed .checkbox-custom {
+    background-color: #558b88;
+    border-radius: 50%;
+}
+
+.list-row.completed .task-text,
+.list-row.completed .section-badge {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    opacity: 0.5;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ccc; 
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.delete-btn:hover {
+    color: #ff6b6b; 
+    transform: scale(1.1);
+}
+
+.delete-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor; 
+}
