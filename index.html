@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand-Drawn Tasks Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="paper-outer">
+        <div class="paper-inner">
+            
+            <div class="header">
+                <div class="title">
+                    <span class="heart">♥</span>
+                     To Do Lists
+                    <span class="heart">♥</span>
+                </div>
+                <div class="squiggle">
+                    <svg viewBox="0 0 100 20" fill="none" stroke-width="2" stroke-linecap="round">
+                        <path d="M10,10 Q30,20 50,10 T90,10" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="write-section">
+                
+                <div class="write-col-1">
+                    <input type="text" id="taskInput" placeholder="Write a new task here...">
+                </div>
+
+                <div class="write-col-2">
+                    <select id="taskSection" class="section-select">
+                        <option value="None">- Tag -</option>
+                        <option value="Work">Work</option>
+                        <option value="Home">Home</option>
+                        <option value="Study">Study</option>
+                    </select>
+                    <button class="add-btn" id="addTaskBtn">Add</button>
+                </div>
+
+            </div>
+
+            <ul id="taskList"></ul>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
